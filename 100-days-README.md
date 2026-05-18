@@ -113,8 +113,8 @@ day-001/
 
 ## 🗓️ Gestartet
 
-- **Startdatum:** [DATUM EINTRAGEN]
-- **Geplantes Ende:** [DATUM + 100 Tage]
+- **Startdatum:** [18.05.2026]
+- **Geplantes Ende:** [18.05.2026 + 100 Tage]
 - **Aktueller Streak:** 1 Tag 🔥
 
 ---
