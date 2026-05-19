@@ -15,20 +15,6 @@ Zahlen und Mathematische Operationen
 
 bmi = 84 / 1.65 ** 2
 
-# Original Float with decimal places
-print(bmi)
-
-# Flooring the number by converting it into int
-print(int(bmi))
-
-# Rounding the number into a whole number
-print(round(bmi))
-
-# Rounding only to 2 decimal places
-print(round(bmi, 2))
-
-
-## Accumulate
 score = 0
 
 # User scores a point
