@@ -1,27 +1,52 @@
-# Tag 001 – Variablen & Strings
+# Tag 002 – Datentypen & Operatoren
 
-**Datum:** [DATUM]
-**Dauer:** [z.B. 1,5 Stunden]
+**Datum:** [19.05.205]
+**Dauer:** [1 Stunde]
 
 ---
 
 ## Was ich heute gelernt habe
 
-*In eigenen Worten – nicht copy-paste aus dem Kurs.*
-
-Beispiel:
-> Variablen sind wie Behälter für Werte. Mit `print()` kann ich sie ausgeben.
-> Strings müssen in Anführungszeichen stehen, Zahlen nicht.
+Zahlen und Mathematische Operationen 
 
 ---
 
 ## Code des Tages
 
-```python
-# Hier dein wichtigster Code-Schnipsel vom Tag
-name = "Max"
-print("Hallo " + name)
-```
+bmi = 84 / 1.65 ** 2
+
+# Original Float with decimal places
+print(bmi)
+
+# Flooring the number by converting it into int
+print(int(bmi))
+
+# Rounding the number into a whole number
+print(round(bmi))
+
+# Rounding only to 2 decimal places
+print(round(bmi, 2))
+
+
+## Accumulate
+score = 0
+
+# User scores a point
+score += 1
+print(score)
+
+#Also
+score -= 1
+score *= 2
+score /= 2
+
+score = 0
+height = 1.8
+is_winning = True
+
+print(f"Your score is = {score}, your height is {height}. You are winning is {is_winning}")
+
+
 
 ---
 
@@ -43,4 +68,4 @@ print("Hallo " + name)
 
 ## Morgen lerne ich
 
-- [ ] Tag 2: Datentypen & Operatoren
+- [ ] Tag 3: Kontrollfluss
