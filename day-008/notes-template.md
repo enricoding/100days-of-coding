@@ -1,80 +1,69 @@
 # Tag 001 – Variablen & Strings
 
-**Datum:** [20.05.2026]
-**Dauer:** [1,5 Stunden]
+**Datum:** [03.06.2026]
+**Dauer:** [3 Stunden]
 
 ---
 
 ## Was ich heute gelernt habe
 
-Nesting und if-Else Operationen
-und Logik Operatoren UND und Oder
+Heute habe ich gelernt wie man inputs mit Funktionen Kombiniert und wie man im allgemeienn Funktionen definiert
+Das vermittelte wissen wurde gleich angewendete und eine Caesar Cipher zum verschsclüsseln und entschlüsseln zu bauen 
 
 ---
 
 ## Code des Tages
-print(r'''
-*******************************************************************************
-          |                   |                  |                     |
- _________|________________.=""_;=.______________|_____________________|_______
-|                   |  ,-"_,=""     `"=.|                  |
-|___________________|__"=._o`"-._        `"=.______________|___________________
-          |                `"=._o`"=._      _`"=._                     |
- _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
-|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
-|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
-          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
- _________|___________| ;`-.o`"=._; ." ` '`."\ ` . "-._ /_______________|_______
-|                   | |o ;    `"-.o`"=._``  '` " ,__.--o;   |
-|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
-____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
-/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
-____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
-/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
-____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
-/______/______/______/______/______/______/______/______/______/______/_____ /
-*******************************************************************************
-''')
-print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.")
-choice1 = input('You\'re at a crossroad, where do you want to go? '
-                'Type "left" or "right".\n').lower()
+import art
 
-if choice1 == "left":
-    choice2 = input('You\'ve come to a lake. '
-                    'There is an island in the middle of the lake. '
-                    'Type "wait" to wait for a boat. '
-                    'Type "swim" to swim across.\n').lower()
-    if choice2 == "wait":
-        choice3 = input("You arrive at the island unharmed. "
-                        "There is house with 3 doors. One red, "
-                        "one yellow and one blue. "
-                        "Which colour do you choose?\n").lower()
-        if choice3 == "red":
-            print("It's a room full of fire. Game Over")
-        elif choice3 == "yellow":
-            print("You found the treasure. You Win!")
-        elif choice3 == "blue":
-            print("You enter a room of beasts. Game Over.")
+print(art.logo)
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'v', 'w', 'x', 'y', 'z']
+
+
+def caesar(original_text, shift_amount, encode_or_decode):
+    output_text = ""
+    if encode_or_decode == "decode":
+        shift_amount *= -1
+
+    for letter in original_text:
+
+        if letter not in alphabet:
+            output_text += letter
         else:
-            print("You chose a door that doesn't exist. Game Over.")
-    else:
-        print("You got attacked by an angry trout. Game Over.")
+            shifted_position = alphabet.index(letter) + shift_amount
+            shifted_position %= len(alphabet)
+            output_text += alphabet[shifted_position]
+    print(f"Here is the {encode_or_decode}d result: {output_text}")
 
-else:
-    print("You fell in to a hole. Game Over.")
+
+should_continue = True
+
+while should_continue:
+
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+
+    caesar(original_text=text, shift_amount=shift, encode_or_decode=direction)
+
+    restart = input("Type 'yes' if you want to go again. Otherwise, type 'no'.\n").lower()
+    if restart == "no":
+        should_continue = False
+        print("Goodbye")
+
 
 ---
 
 ## Was war schwierig?
 
-Noch war alles leicht verständlich
+Dieser Tag war schon ziemlich anspruchsvoll, das bereits gelernte wissen hiuer anzuwenden da musst ich ziemlich ioft anchschauen und habe viele Fehler gemacht
 ---
 
 ## Meine eigene Abwandlung
 
-
+Ich muss erst noch mehr lernen um eigene Abwandlungen zu erstellen
 
 ## Morgen lerne ich
 
-- [ ] Tag 4: Randomisation and Python Lists
+- [ ] Tag 9: Dictonaries, Nesting and Secret Auction
