@@ -1,74 +1,58 @@
-# Tag 001 – Variablen & Strings
-
-**Datum:** [20.05.2026]
+# Tag 009 – Dictionaries, Nesting and the Secret Auction
+**Datum:** [03.06.2026]
 **Dauer:** [1,5 Stunden]
 
 ---
 
 ## Was ich heute gelernt habe
-
-Nesting und if-Else Operationen
-und Logik Operatoren UND und Oder
+Wie ein Dictionarie funktioniert und wie man eine Liste in einer Liste hat und aus den Liste gezielt Sachen auslesen kann 
 
 ---
 
 ## Code des Tages
-print(r'''
-*******************************************************************************
-          |                   |                  |                     |
- _________|________________.=""_;=.______________|_____________________|_______
-|                   |  ,-"_,=""     `"=.|                  |
-|___________________|__"=._o`"-._        `"=.______________|___________________
-          |                `"=._o`"=._      _`"=._                     |
- _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
-|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
-|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
-          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
- _________|___________| ;`-.o`"=._; ." ` '`."\ ` . "-._ /_______________|_______
-|                   | |o ;    `"-.o`"=._``  '` " ,__.--o;   |
-|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
-____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
-/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
-____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
-/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
-____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
-/______/______/______/______/______/______/______/______/______/______/_____ /
-*******************************************************************************
-''')
-print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.")
-choice1 = input('You\'re at a crossroad, where do you want to go? '
-                'Type "left" or "right".\n').lower()
+from art import logo
+print(logo)
+logo = r'''
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\\
+                       .-------------.
+                      /_______________\\
+'''
 
-if choice1 == "left":
-    choice2 = input('You\'ve come to a lake. '
-                    'There is an island in the middle of the lake. '
-                    'Type "wait" to wait for a boat. '
-                    'Type "swim" to swim across.\n').lower()
-    if choice2 == "wait":
-        choice3 = input("You arrive at the island unharmed. "
-                        "There is house with 3 doors. One red, "
-                        "one yellow and one blue. "
-                        "Which colour do you choose?\n").lower()
-        if choice3 == "red":
-            print("It's a room full of fire. Game Over")
-        elif choice3 == "yellow":
-            print("You found the treasure. You Win!")
-        elif choice3 == "blue":
-            print("You enter a room of beasts. Game Over.")
-        else:
-            print("You chose a door that doesn't exist. Game Over.")
-    else:
-        print("You got attacked by an angry trout. Game Over.")
+def find_highest_bidder(bidding_record):
+    highest_bid = 0
+    winner = ""
+    for bidder in bidding_record:
+        bid_amount = bidding_record[bidder]
+        if bid_amount > highest_bid:
+            highest_bid = bid_amount
+            winner = bidder
+    print(f"The winner is {winner} with a bid of ${highest_bid}")
 
-else:
-    print("You fell in to a hole. Game Over.")
 
----
+bids = {}
+continue_bidding = True
+while continue_bidding:
+    name = input("What is your name?: ")
+    price = int(input("What is your bid?: $"))
+    bids[name] = price
+    should_continue = input("Are there any other bidders? Type 'yes or 'no'.\n")
+    if should_continue == "no":
+        continue_bidding = False
+        find_highest_bidder(bids)
+    elif should_continue == "yes":
+        print("\n" * 20)
 
 ## Was war schwierig?
 
-Noch war alles leicht verständlich
+Mir viel es besonders schwer bei dem Projekt einen Anfang zu finden deswegen habe ich es Schritt für Schritt anch dem Video absolviert und dannach mein Verständnis vertieft.
 ---
 
 ## Meine eigene Abwandlung
@@ -77,4 +61,4 @@ Noch war alles leicht verständlich
 
 ## Morgen lerne ich
 
-- [ ] Tag 4: Randomisation and Python Lists
+- [ ] Tag 10: Functions with Outputs
